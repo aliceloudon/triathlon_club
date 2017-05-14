@@ -7,7 +7,7 @@ class DashboardContainer extends React.Component {
       <div>
         <h1>Edinburgh Triathletes</h1>
       </div>
-      )
+    )
   }
 
 }
