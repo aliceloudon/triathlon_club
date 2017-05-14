@@ -1,9 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import DashboardContainer from './containers/DashboardContainer'
 
 window.onload = function(){
   ReactDOM.render(
-    <h1> App Started </h1>,
+    <DashboardContainer/>,
     document.getElementById('app')
-  );
+  )
 }
