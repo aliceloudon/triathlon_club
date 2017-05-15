@@ -4,9 +4,7 @@ import TimeTrial from './TimeTrial'
 class TimeTrialList extends React.Component {
 
   handleClick(time_trial){
-    // this.props.handleTimeTrialClick(this.props.timetrials[event.target])
     this.props.handleTimeTrialClick(time_trial)
-
   }
 
   render(){

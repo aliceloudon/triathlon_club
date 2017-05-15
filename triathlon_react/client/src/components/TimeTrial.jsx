@@ -8,8 +8,6 @@ class TimeTrial extends React.Component {
 
   handleClick(event){
     this.props.handleClick(this.props.timetrial)
-    // console.log(this.props.timetrials[event.target.value])
-    console.log(this.props.timetrial)
   }
 
   render(){

@@ -55,14 +55,20 @@ class DashboardContainer extends React.Component {
   }
 
   handleTimeTrialClick(time_trial){
-    const newDetailsArray = []
-    this.state.results.forEach((result) =>{
-      if (result.time_trial_id === time_trial.id) {
-        newDetailsArray.push(result)
-      }
-    })
-    this.setState({details: newDetailsArray})
+    var newDetailsArray = []
+    newDetailsArray.push(time_trial)
+    // console.log(newDetailsArray)
+    this.updateDetails(newDetailsArray)
+    // this.setState({details: newDetailsArray})
+    // console.log(this.state.details)
   }
+
+  updateDetails(newDetailsArray){
+    // console.log('test')
+    this.setState({details: newDetailsArray})
+    console.log(this.state.details)
+  }
+
 
   render(){
     return(
