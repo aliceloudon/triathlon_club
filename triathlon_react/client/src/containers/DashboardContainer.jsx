@@ -2,7 +2,7 @@ import React from 'react'
 import MemberList from '../components/MemberList'
 import MemberForm from '../components/MemberForm'
 import TimeTrialList from '../components/TimeTrialList'
-import Detail from '../components/Detail'
+import DetailContainer from './DetailContainer'
 
 class DashboardContainer extends React.Component {
 
@@ -12,7 +12,7 @@ class DashboardContainer extends React.Component {
       members: [],
       timetrials: [],
       results: [],
-      details: 'test',
+      details: []
     }
   }
 
@@ -54,9 +54,15 @@ class DashboardContainer extends React.Component {
     result_request.send()
   }
 
-  handleTimeTrialClick(){
-    console.log('time trial has been clicked')
-    console.log(this.state.results)
+  handleTimeTrialClick(time_trial){
+    const newDetailsArray = []
+    this.state.results.forEach((result) =>{
+      if (result.time_trial_id === time_trial.id) {
+        newDetailsArray.push(result)
+      }
+    })
+    this.setState({details: newDetailsArray})
+    console.log(newDetailsArray)
   }
 
   render(){
@@ -68,7 +74,7 @@ class DashboardContainer extends React.Component {
         </section>
 
         <section>
-          <Detail details={this.state.details}/>
+          <DetailContainer details={this.state.details}/>
         </section>
         
         <section>

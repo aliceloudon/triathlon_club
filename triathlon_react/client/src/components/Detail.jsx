@@ -4,7 +4,7 @@ class Detail extends React.Component {
 
   render(){
     return(
-      <div className='detail-display'>{this.props.details}</div>
+      <li>{this.props.title}</li>
     )
   }
 

@@ -21,7 +21,7 @@ class ResultsController < ApplicationController
     result = Result.create({
       time: params[:time],
       member_id: params[:member_id],
-      timetrial_id: params[:timetrial_id]
+      time_trial_id: params[:time_trial_id]
       })
     render json: result
   end
