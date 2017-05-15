@@ -11,9 +11,12 @@ class MemberList extends React.Component {
     })
 
     return(
-      <div>
-        {memberNodes}        
-      </div>
+      <section>
+        <ul className='member-list'>
+          {memberNodes}        
+        </ul>
+      </section>
+
     )
   }
 

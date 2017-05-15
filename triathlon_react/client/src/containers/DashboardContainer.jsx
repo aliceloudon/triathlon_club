@@ -1,12 +1,15 @@
 import React from 'react'
 import MemberList from '../components/MemberList'
+import MemberForm from '../components/MemberForm'
+import TimeTrialList from '../components/TimeTrialList'
 
 class DashboardContainer extends React.Component {
 
   constructor(props){
     super(props)
     this.state = {
-      members: []
+      members: [],
+      timetrials: []
     }
   }
 
@@ -15,28 +18,33 @@ class DashboardContainer extends React.Component {
     var request = new XMLHttpRequest()
     request.open('GET', url)
 
-    // request.setRequestHeader('Content-Type', "application/json")
-    // request.withCredentials = true
-
     request.onload = () => {
       if (request.status === 200){
-        // console.log("request: ", request.responseText)
         var data = JSON.parse(request.responseText)
         this.setState({members: data})
       }
-      // else {
-      //   console.log("Error has occured.")
-      // }
     }
     request.send()
   }
 
   render(){
     return(
-      <div>
+      <section>
         <h1>Edinburgh Triathletes</h1>
-        <MemberList members={this.state.members}/>
-      </div>
+
+        <article>
+          <MemberList members={this.state.members}/>  
+        </article>
+        
+        <article>
+          <MemberForm />  
+        </article>
+        
+        <article>
+          <TimeTrialList timetrials={this.state.timetrials}/>
+        </article>
+
+      </section>
     )
   }
 

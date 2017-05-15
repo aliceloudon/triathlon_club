@@ -4,7 +4,7 @@ class Member extends React.Component {
 
   render(){
     return(
-      <div>{this.props.name}</div>
+      <li>{this.props.name}</li>
     )
   }
 
