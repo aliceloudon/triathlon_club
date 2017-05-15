@@ -16,7 +16,6 @@ class MemberList extends React.Component {
           {memberNodes}        
         </ul>
       </section>
-
     )
   }
 

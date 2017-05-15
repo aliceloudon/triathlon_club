@@ -13,20 +13,6 @@ class DashboardContainer extends React.Component {
     }
   }
 
-  // componentDidMount(){
-  //   var url = 'http://localhost:5000/api/members'
-  //   var request = new XMLHttpRequest()
-  //   request.open('GET', url)
-
-  //   request.onload = () => {
-  //     if (request.status === 200){
-  //       var data = JSON.parse(request.responseText)
-  //       this.setState({members: data})
-  //     }
-  //   }
-  //   request.send()
-  // }
-
   componentDidMount(){
     var member_url = 'http://localhost:5000/api/members'
     var member_request = new XMLHttpRequest()
