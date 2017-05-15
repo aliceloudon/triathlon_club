@@ -54,7 +54,10 @@ class DashboardContainer extends React.Component {
     result_request.send()
   }
 
-
+  handleTimeTrialClick(){
+    console.log('time trial has been clicked')
+    console.log(this.state.results)
+  }
 
   render(){
     return(
@@ -69,7 +72,7 @@ class DashboardContainer extends React.Component {
         </section>
         
         <section>
-          <TimeTrialList timetrials={this.state.timetrials}/>
+          <TimeTrialList timetrials={this.state.timetrials} handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}/>
         </section>
 
         <section>

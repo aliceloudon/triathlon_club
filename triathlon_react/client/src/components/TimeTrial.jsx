@@ -11,15 +11,16 @@ class TimeTrial extends React.Component {
     }
   }
 
-  handleClick(){
-    this.setState({date: this.props.date})
-    this.setState({discipline: this.props.discipline})
-    this.setState({distance: this.props.distance})
-  }
+  // handleClick(){
+  //   this.setState({date: this.props.date})
+  //   this.setState({discipline: this.props.discipline})
+  //   this.setState({distance: this.props.distance})
+  // }
+  // onClick={this.handleClick.bind(this)}
 
   render(){
     return(
-      <li onClick={this.handleClick.bind(this)}> 
+      <li> 
         {this.props.title} 
         {this.state.date}
         {this.state.discipline}
