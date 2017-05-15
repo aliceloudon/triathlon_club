@@ -4,7 +4,7 @@ class Detail extends React.Component {
 
   render(){
     return(
-      <li>{this.props.title}</li>
+      <li>{this.props.member}: {this.props.time}</li>
     )
   }
 

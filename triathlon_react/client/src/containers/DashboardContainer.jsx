@@ -62,7 +62,6 @@ class DashboardContainer extends React.Component {
       }
     })
     this.setState({details: newDetailsArray})
-    console.log(newDetailsArray)
   }
 
   render(){

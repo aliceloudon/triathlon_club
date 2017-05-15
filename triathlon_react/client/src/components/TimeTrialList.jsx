@@ -3,20 +3,22 @@ import TimeTrial from './TimeTrial'
 
 class TimeTrialList extends React.Component {
 
-  handleClick(event){
-    this.props.handleTimeTrialClick(this.props.timetrials[event.target.value])
+  handleClick(time_trial){
+    // this.props.handleTimeTrialClick(this.props.timetrials[event.target])
+    this.props.handleTimeTrialClick(time_trial)
+
   }
 
   render(){
     const timeTrialNodes = this.props.timetrials.map((timetrial, index) => {
       return (
-        <TimeTrial key={index} title={timetrial.title} date={timetrial.date} discipline={timetrial.discipline} distance={timetrial.distance} />
+        <TimeTrial key={index} timetrial={timetrial} handleClick={this.handleClick.bind(this)} />
       )
     })
 
     return(
-      <section>
-        <ul className='time-trial-list' onClick={this.handleClick.bind(this)}>
+      <section >
+        <ul className='time-trial-list' >
           {timeTrialNodes}        
         </ul>
       </section>
