@@ -41,20 +41,19 @@ class DashboardContainer extends React.Component {
 
   render(){
     return(
-      <section>
-        <h1>Edinburgh Triathletes</h1>
+      <section className='main-container'>
 
-        <article>
+        <section>
           <MemberList members={this.state.members}/>  
-        </article>
+        </section>
         
-        <article>
-          <MemberForm />  
-        </article>
-        
-        <article>
+        <section>
           <TimeTrialList timetrials={this.state.timetrials}/>
-        </article>
+        </section>
+
+        <section>
+          <MemberForm />  
+        </section>
 
       </section>
     )

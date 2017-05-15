@@ -13,7 +13,7 @@ class TimeTrialList extends React.Component {
 
     return(
       <section>
-        <ul className='timetrial-list'>
+        <ul className='time-trial-list'>
           {timeTrialNodes}        
         </ul>
       </section>
