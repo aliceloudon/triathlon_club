@@ -2,6 +2,7 @@ import React from 'react'
 import MemberList from '../components/MemberList'
 import MemberForm from '../components/MemberForm'
 import TimeTrialList from '../components/TimeTrialList'
+import Detail from '../components/Detail'
 
 class DashboardContainer extends React.Component {
 
@@ -9,7 +10,9 @@ class DashboardContainer extends React.Component {
     super(props)
     this.state = {
       members: [],
-      timetrials: []
+      timetrials: [],
+      results: [],
+      details: 'test',
     }
   }
 
@@ -37,7 +40,21 @@ class DashboardContainer extends React.Component {
       }
     }
     time_trial_request.send()
+
+    var result_url = 'http://localhost:5000/api/results'
+    var result_request = new XMLHttpRequest()
+    result_request.open('GET', result_url)
+
+    result_request.onload = () => {
+      if (result_request.status === 200){
+        var data = JSON.parse(result_request.responseText)
+        this.setState({results: data})
+      }
+    }
+    result_request.send()
   }
+
+
 
   render(){
     return(
@@ -45,6 +62,10 @@ class DashboardContainer extends React.Component {
 
         <section>
           <MemberList members={this.state.members}/>  
+        </section>
+
+        <section>
+          <Detail details={this.state.details}/>
         </section>
         
         <section>

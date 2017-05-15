@@ -6,7 +6,7 @@
 .member-list {
   list-style-type: none;
   border: 1px solid grey;
-  margin: 0;
+  margin: 20px;
   padding: 0;
   width: 250px;
   height: 250px;
@@ -15,7 +15,16 @@
 .time-trial-list {
   list-style-type: none;
   border: 1px solid grey;
-  margin: 0;
+  margin: 20px;
+  padding: 0;
+  width: 250px;
+  height: 250px;
+}
+
+.detail-display {
+  list-style-type: none;
+  border: 1px solid grey;
+  margin: 20px;
   padding: 0;
   width: 250px;
   height: 250px;
