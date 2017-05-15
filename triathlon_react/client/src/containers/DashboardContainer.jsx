@@ -13,18 +13,44 @@ class DashboardContainer extends React.Component {
     }
   }
 
-  componentDidMount(){
-    var url = 'http://localhost:5000/api/members'
-    var request = new XMLHttpRequest()
-    request.open('GET', url)
+  // componentDidMount(){
+  //   var url = 'http://localhost:5000/api/members'
+  //   var request = new XMLHttpRequest()
+  //   request.open('GET', url)
 
-    request.onload = () => {
-      if (request.status === 200){
-        var data = JSON.parse(request.responseText)
+  //   request.onload = () => {
+  //     if (request.status === 200){
+  //       var data = JSON.parse(request.responseText)
+  //       this.setState({members: data})
+  //     }
+  //   }
+  //   request.send()
+  // }
+
+  componentDidMount(){
+    var member_url = 'http://localhost:5000/api/members'
+    var member_request = new XMLHttpRequest()
+    member_request.open('GET', member_url)
+
+    member_request.onload = () => {
+      if (member_request.status === 200){
+        var data = JSON.parse(member_request.responseText)
         this.setState({members: data})
       }
     }
-    request.send()
+    member_request.send()
+
+    var time_trial_url = 'http://localhost:5000/api/time_trials'
+    var time_trial_request = new XMLHttpRequest()
+    time_trial_request.open('GET', time_trial_url)
+
+    time_trial_request.onload = () => {
+      if (time_trial_request.status === 200){
+        var data = JSON.parse(time_trial_request.responseText)
+        this.setState({timetrials: data})
+      }
+    }
+    time_trial_request.send()
   }
 
   render(){
