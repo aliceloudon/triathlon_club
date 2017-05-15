@@ -1,18 +1,21 @@
 class ResultsController < ApplicationController
 
   def index
-    # results = Result.where({member: params[:member_id]})
-    # render json: results.as_json({
-    #   only: [:time],
-    #   include: {
-    #     member: {
-    #       only: [:name]
-    #       },
-    #       timetrial: {
-    #         only: [:title, :date, :discipline, :distance]
-    #       }
-    #     }
-    #     })
+    results = Result.where({member: params[:member_id]})
+    render json: results.as_json({
+      only: [:time],
+      include: {
+        member: {
+          only: [:name]
+        },
+        time_trial: {
+          only: [:title, :date, :discipline, :distance]
+        }
+      }
+    })
+  end
+
+  def all_results
     results = Result.all
     render json: results
   end

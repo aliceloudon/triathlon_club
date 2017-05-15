@@ -11,10 +11,14 @@ Rails.application.routes.draw do
   # end
 
   scope path: "api" do
-    resources :members, defaults: {format: :json}
-    resources :results, defaults: {format: :json}
+    resources :members, defaults: {format: :json} do
+      resources :results
+    end
+    # resources :results, defaults: {format: :json}
     resources :time_trials, defaults: {format: :json}
   end
+
+  get 'api/results' => 'results#all_results'
 
   # get 'timetrials' => 'timetrials#index'
 
