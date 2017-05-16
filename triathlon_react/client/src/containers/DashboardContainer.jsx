@@ -15,7 +15,8 @@ class DashboardContainer extends React.Component {
       results: [],
       timeTrialDetails: [],
       resultsDetails: [],
-      memberDetails: []
+      memberDetails: [],
+      memberResults: []
     }
   }
 
@@ -58,8 +59,8 @@ class DashboardContainer extends React.Component {
   }
 
   handleTimeTrialClick(timeTrial){
-    var newDetailsArray = []
-    var newResultsArray = []
+    const newDetailsArray = []
+    const newResultsArray = []
     newDetailsArray.push(timeTrial)
 
     this.state.results.forEach((result) => {
@@ -75,8 +76,20 @@ class DashboardContainer extends React.Component {
   }
 
   handleMemberClick(member){
+    const newMemberResults = []
+
     this.setState((prevState) => ({
       memberDetails: member
+    }))
+
+    this.state.results.forEach((result) => {
+      if (result.member.id === member.id) {
+        newMemberResults.push(result)
+      }
+    })
+
+    this.setState((prevState) => ({
+      memberResults: newMemberResults
     }))
   }
 
@@ -92,9 +105,8 @@ class DashboardContainer extends React.Component {
         </section>
 
         <section className='secondary-container'>
-          <AthleteHistoryContainer
-            memberDetails={this.state.memberDetails}
-          />
+          <h1>{this.state.memberDetails.name}</h1>
+          <AthleteHistoryContainer memberResults={this.state.memberResults} />
         </section>
 
         <section className='secondary-container'>

@@ -21,7 +21,7 @@ class ResultsController < ApplicationController
       only: [:id, :time],
       include: {
         member: {
-          only: [:name]
+          only: [:id, :name]
         },
         time_trial: {
           only: [:id, :title, :date, :discipline, :distance]
