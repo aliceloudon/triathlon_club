@@ -1,19 +1,18 @@
 import React from 'react'
 
-class Detail extends React.Component {
+class TimeTrialDetail extends React.Component {
 
   render(){
     return(
-      <ul className='detail-list'>
+      <section>
         <li>{this.props.title}</li>
         <li>{this.props.date}</li>
         <li>{this.props.discipline}</li>
         <li>{this.props.distance}</li>
-        <li>{this.props.member_id}: {this.props.time}</li>
-      </ul>
+      </section>
     )
   }
 
 }
 
-export default Detail
+export default TimeTrialDetail

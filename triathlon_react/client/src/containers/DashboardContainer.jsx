@@ -1,7 +1,7 @@
 import React from 'react'
 import MemberList from '../components/MemberList'
 import MemberForm from '../components/MemberForm'
-import TimeTrialList from '../components/TimeTrialList'
+import TimeTrialContainer from '../containers/TimeTrialContainer'
 import DetailContainer from './DetailContainer'
 
 class DashboardContainer extends React.Component {
@@ -87,7 +87,7 @@ class DashboardContainer extends React.Component {
         </section>
         
         <section>
-          <TimeTrialList timetrials={this.state.timetrials} handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}/>
+          <TimeTrialContainer timetrials={this.state.timetrials} handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}/>
         </section>
 
         <section>

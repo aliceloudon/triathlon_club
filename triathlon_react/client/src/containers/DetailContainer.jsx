@@ -1,5 +1,6 @@
 import React from 'react'
-import Detail from '../components/Detail'
+import TimeTrialDetail from '../components/TimeTrialDetail'
+import ResultsDetail from '../components/ResultsDetail'
 
 class DetailContainer extends React.Component {
 
@@ -7,20 +8,22 @@ class DetailContainer extends React.Component {
 
     const timeTrialDetailNodes = this.props.timeTrialDetails.map((timeTrial, index) => {
       return (
-        <Detail key={index} title={timeTrial.title} date={timeTrial.date} discipline={timeTrial.discipline} distance={timeTrial.distance}/>
+        <TimeTrialDetail key={index} title={timeTrial.title} date={timeTrial.date} discipline={timeTrial.discipline} distance={timeTrial.distance}/>
       )
     })
 
     const resultsDetailNodes = this.props.resultsDetails.map((result, index) => {
       return (
-        <Detail key={index} time={result.time} member={result.member_id}/>
+        <ResultsDetail key={index} time={result.time} member={result.member_id}/>
       )
     })
 
     return(
       <section className='detail-display'>
-        {timeTrialDetailNodes}
-        {resultsDetailNodes}
+        <h4>TT details:</h4>
+          <ul>{timeTrialDetailNodes}</ul>
+        <h4>Results:</h4>
+          <ul>{resultsDetailNodes}</ul>
       </section>
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react'
-import TimeTrial from './TimeTrial'
+import TimeTrial from '../components/TimeTrial'
 
-class TimeTrialList extends React.Component {
+class TimeTrialContainer extends React.Component {
 
   render(){
     const timeTrialNodes = this.props.timetrials.map((timetrial, index) => {
@@ -12,7 +12,7 @@ class TimeTrialList extends React.Component {
 
     return(
       <section >
-        <ul className='time-trial-list' >
+        <ul className='time-trial-container' >
           {timeTrialNodes}        
         </ul>
       </section>
@@ -21,4 +21,4 @@ class TimeTrialList extends React.Component {
 
 }
 
-export default TimeTrialList
+export default TimeTrialContainer

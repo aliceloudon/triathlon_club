@@ -12,7 +12,7 @@
   height: 250px;
 }
 
-.time-trial-list {
+.time-trial-container {
   list-style-type: none;
   border: 1px solid grey;
   margin: 20px;
