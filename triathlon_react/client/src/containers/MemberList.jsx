@@ -1,7 +1,7 @@
 import React from 'react'
 import Member from '../components/Member'
 
-class MemberContainer extends React.Component {
+class MemberList extends React.Component {
 
   render(){
     const memberNodes = this.props.members.map((member, index) => {
@@ -26,4 +26,4 @@ class MemberContainer extends React.Component {
 
 }
 
-export default MemberContainer
+export default MemberList

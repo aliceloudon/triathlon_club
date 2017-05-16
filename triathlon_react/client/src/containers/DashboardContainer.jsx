@@ -1,9 +1,9 @@
 import React from 'react'
-import MemberContainer from '../containers/MemberContainer'
+import MemberList from '../containers/MemberList'
 import MemberForm from '../components/MemberForm'
-import TimeTrialContainer from '../containers/TimeTrialContainer'
-import DetailContainer from './DetailContainer'
-import AthleteHistoryContainer from './AthleteHistoryContainer'
+import TimeTrialList from '../containers/TimeTrialList'
+import TimeTrialResultsList from './TimeTrialResultsList'
+import MemberResultsList from './MemberResultsList'
 
 class DashboardContainer extends React.Component {
 
@@ -98,18 +98,18 @@ class DashboardContainer extends React.Component {
       <section className='main-container'>
 
         <section className='secondary-container'>
-          <MemberContainer 
+          <MemberList 
             members={this.state.members}
             handleMemberClick={this.handleMemberClick.bind(this)}
           />
         </section>
 
         <section className='secondary-container'>
-          <AthleteHistoryContainer memberResults={this.state.memberResults} member={this.state.memberDetails}/>
+          <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
         </section>
 
         <section className='secondary-container'>
-          <DetailContainer 
+          <TimeTrialResultsList 
             timeTrialDetails={this.state.timeTrialDetails} 
             resultsDetails={this.state.resultsDetails}
             memberDetails={this.state.memberDetails}
@@ -117,7 +117,7 @@ class DashboardContainer extends React.Component {
         </section>
         
         <section className='secondary-container'>
-          <TimeTrialContainer 
+          <TimeTrialList 
             timetrials={this.state.timetrials} 
             handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
           />

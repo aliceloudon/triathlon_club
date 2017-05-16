@@ -2,7 +2,7 @@ import React from 'react'
 import TimeTrialDetail from '../components/TimeTrialDetail'
 import ResultsDetail from '../components/ResultsDetail'
 
-class DetailContainer extends React.Component {
+class TimeTrialResultsList extends React.Component {
 
   render(){
 
@@ -41,4 +41,4 @@ class DetailContainer extends React.Component {
 
 }
 
-export default DetailContainer
+export default TimeTrialResultsList

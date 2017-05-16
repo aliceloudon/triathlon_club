@@ -1,7 +1,7 @@
 import React from 'react'
 import MemberResult from '../components/MemberResult'
 
-class AthleteHistoryContainer extends React.Component {
+class MemberResultsList extends React.Component {
 
   render(){
     const memberResultNodes = this.props.memberResults.map((result, index) => {
@@ -23,4 +23,4 @@ class AthleteHistoryContainer extends React.Component {
 
 }
 
-export default AthleteHistoryContainer
+export default MemberResultsList
