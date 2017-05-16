@@ -5,9 +5,11 @@ class DetailContainer extends React.Component {
 
   render(){
 
+    // console.log(this.props.details)
+
     const detailNodes = this.props.details.map((detail, index) => {
       return (
-        <Detail key={index} time={detail.time} member={detail.member_id}/>
+        <Detail key={index} title={detail.title} />
       )
     })
 

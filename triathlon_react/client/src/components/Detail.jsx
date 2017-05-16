@@ -3,10 +3,9 @@ import React from 'react'
 class Detail extends React.Component {
 
   render(){
+    console.log(this.props.title)
     return(
-      <ul>
-        <li>{this.props.details}</li>
-      </ul>
+      <div>{this.props.title}</div>
     )
   }
 

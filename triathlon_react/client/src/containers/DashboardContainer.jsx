@@ -54,21 +54,14 @@ class DashboardContainer extends React.Component {
     result_request.send()
   }
 
-  handleTimeTrialClick(time_trial){
+  handleTimeTrialClick(timeTrial){
     var newDetailsArray = []
-    newDetailsArray.push(time_trial)
-    // console.log(newDetailsArray)
-    this.updateDetails(newDetailsArray)
-    // this.setState({details: newDetailsArray})
-    // console.log(this.state.details)
+    newDetailsArray.push(timeTrial)
+    
+    this.setState((prevState) => ({
+      details: newDetailsArray
+    }))
   }
-
-  updateDetails(newDetailsArray){
-    // console.log('test')
-    this.setState({details: newDetailsArray})
-    console.log(this.state.details)
-  }
-
 
   render(){
     return(
