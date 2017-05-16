@@ -105,8 +105,7 @@ class DashboardContainer extends React.Component {
         </section>
 
         <section className='secondary-container'>
-          <h1>{this.state.memberDetails.name}</h1>
-          <AthleteHistoryContainer memberResults={this.state.memberResults} />
+          <AthleteHistoryContainer memberResults={this.state.memberResults} member={this.state.memberDetails}/>
         </section>
 
         <section className='secondary-container'>

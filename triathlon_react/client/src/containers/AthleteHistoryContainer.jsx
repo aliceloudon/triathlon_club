@@ -12,6 +12,8 @@ class AthleteHistoryContainer extends React.Component {
 
     return(
       <section>
+        <h4>Individual Results</h4>
+        <h4>{this.props.member.name}</h4>
         <ul className='member-list'>
           {memberResultNodes}
         </ul>

@@ -16,6 +16,7 @@ class MemberContainer extends React.Component {
 
     return(
       <section>
+        <h4>Current Members</h4>
         <ul className='member-list'>
           {memberNodes}        
         </ul>
