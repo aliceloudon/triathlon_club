@@ -1,5 +1,5 @@
 import React from 'react'
-import MemberList from '../components/MemberList'
+import MemberContainer from '../containers/MemberContainer'
 import MemberForm from '../components/MemberForm'
 import TimeTrialContainer from '../containers/TimeTrialContainer'
 import DetailContainer from './DetailContainer'
@@ -59,13 +59,13 @@ class DashboardContainer extends React.Component {
     var newDetailsArray = []
     var newResultsArray = []
     newDetailsArray.push(timeTrial)
-
+    // console.log(this.state.results)
     this.state.results.forEach((result) => {
-      if (result.time_trial_id === timeTrial.id){
+      // console.log(result.time_trial.id)
+      if (result.time_trial.id === timeTrial.id){
         newResultsArray.push(result)
       }
     })
-
 
     this.setState((prevState) => ({
       timeTrialDetails: newDetailsArray,
@@ -79,15 +79,21 @@ class DashboardContainer extends React.Component {
       <section className='main-container'>
 
         <section>
-          <MemberList members={this.state.members}/>  
+          <MemberContainer members={this.state.members}/>  
         </section>
 
         <section>
-          <DetailContainer timeTrialDetails={this.state.timeTrialDetails} resultsDetails={this.state.resultsDetails}/>
+          <DetailContainer 
+            timeTrialDetails={this.state.timeTrialDetails} 
+            resultsDetails={this.state.resultsDetails}
+          />
         </section>
         
         <section>
-          <TimeTrialContainer timetrials={this.state.timetrials} handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}/>
+          <TimeTrialContainer 
+            timetrials={this.state.timetrials} 
+            handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
+          />
         </section>
 
         <section>

@@ -5,7 +5,7 @@ class ResultsDetail extends React.Component {
   render(){
     return(
       <section>
-        <li>{this.props.member_id} {this.props.time}</li>
+        <li>{this.props.member} {this.props.time}</li>
       </section>
     )
   }
