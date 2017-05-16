@@ -4,6 +4,8 @@ import MemberForm from '../components/MemberForm'
 import TimeTrialList from '../containers/TimeTrialList'
 import TimeTrialResultsList from './TimeTrialResultsList'
 import MemberResultsList from './MemberResultsList'
+import TrainingScheduleTable from './TrainingScheduleTable'
+import AjaxRequest from '../services/AjaxRequest'
 
 class DashboardContainer extends React.Component {
 
@@ -18,6 +20,10 @@ class DashboardContainer extends React.Component {
       memberDetails: [],
       memberResults: []
     }
+  }
+
+  fetchAPIData(){
+    
   }
 
   componentDidMount(){
@@ -96,36 +102,42 @@ class DashboardContainer extends React.Component {
 
   render(){
     return(
-      <section className='main-container'>
+      <section>
+        <section className='main-container'>
 
-        <section className='secondary-container'>
-          <MemberList 
-            members={this.state.members}
-            handleMemberClick={this.handleMemberClick.bind(this)}
-          />
+          <section className='secondary-container'>
+            <MemberList 
+              members={this.state.members}
+              handleMemberClick={this.handleMemberClick.bind(this)}
+            />
+          </section>
+
+          <section className='secondary-container'>
+            <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
+          </section>
+
+          <section className='secondary-container'>
+            <TimeTrialResultsList 
+              timeTrialDetails={this.state.timeTrialDetails} 
+              resultsDetails={this.state.resultsDetails}
+              memberDetails={this.state.memberDetails}
+            />
+          </section>
+          
+          <section className='secondary-container'>
+            <TimeTrialList 
+              timetrials={this.state.timetrials} 
+              handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
+            />
+          </section>
+
+          <section className='secondary-container'>
+            <MemberForm />  
+          </section>
         </section>
 
-        <section className='secondary-container'>
-          <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
-        </section>
-
-        <section className='secondary-container'>
-          <TimeTrialResultsList 
-            timeTrialDetails={this.state.timeTrialDetails} 
-            resultsDetails={this.state.resultsDetails}
-            memberDetails={this.state.memberDetails}
-          />
-        </section>
-        
-        <section className='secondary-container'>
-          <TimeTrialList 
-            timetrials={this.state.timetrials} 
-            handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
-          />
-        </section>
-
-        <section className='secondary-container'>
-          <MemberForm />  
+        <section className='training-schedule'>
+          <TrainingScheduleTable />
         </section>
 
       </section>

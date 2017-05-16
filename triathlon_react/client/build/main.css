@@ -11,6 +11,19 @@
   height: 250px;
 }
 
+table, th, td {
+    border: 1px solid black;
+}
+
+.training-schedule {
+  margin: 20px;
+  padding: 0;
+  width: 1000px;
+  height: 500px;
+}
+
+
+
 /*.member-list {
   list-style-type: none;
   margin: 0;
