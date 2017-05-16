@@ -6,6 +6,7 @@ import TimeTrialResultsList from './TimeTrialResultsList'
 import MemberResultsList from './MemberResultsList'
 import TrainingScheduleTable from './TrainingScheduleTable'
 import AjaxRequest from '../services/AjaxRequest'
+import Sidebar from './Sidebar'
 
 class DashboardContainer extends React.Component {
 
@@ -22,39 +23,46 @@ class DashboardContainer extends React.Component {
     }
   }
 
-  fetchData(url){
+  fetchMemberData(url){
     const req = new AjaxRequest()
     req.get(url, (err, data, status) => {
       if (err) {throw err}
       if (status === 200){
-        switch (url) {
-          case 'http://localhost:5000/api/members':
-            this.setState({
-              members: data
-            })
-          case 'http://localhost:5000/api/time_trials':
-            this.setState({
-              timetrials: data
-            })
-          case 'http://localhost:5000/api/results':
-            this.setState({
-              results: data
-            })
-        }
+        this.setState({members: data})
+      }
+    })
+  }
+
+  fetchTimeTrialData(url){
+    const req = new AjaxRequest()
+    req.get(url, (err, data, status) => {
+      if (err) {throw err}
+      if (status === 200){
+        this.setState({timetrials: data})
+      }
+    })
+  }
+
+  fetchResultData(url){
+    const req = new AjaxRequest()
+    req.get(url, (err, data, status) => {
+      if (err) {throw err}
+      if (status === 200){
+        this.setState({results: data})
       }
     })
   }
 
   componentDidMount(){
-    this.fetchData('http://localhost:5000/api/members')
-    this.fetchData('http://localhost:5000/api/time_trials')
-    this.fetchData('http://localhost:5000/api/results')
+    this.fetchMemberData('http://localhost:5000/api/members')
+    this.fetchTimeTrialData('http://localhost:5000/api/time_trials')
+    this.fetchResultData('http://localhost:5000/api/results')
   }
 
   handleTimeTrialClick(timeTrial){
     const newDetailsArray = []
     const newResultsArray = []
-    newDetailsArray.push(timeTrial)
+    newDetailsArray.push(timeTrial)    
 
     this.state.results.forEach((result) => {
       if (result.time_trial.id === timeTrial.id){
@@ -88,10 +96,15 @@ class DashboardContainer extends React.Component {
 
   render(){
     return(
-      <section>
-        <section className='main-container'>
+      <section className='main-container'>
+      
+        <section className='sidebar'>
+          <Sidebar />
+        </section>
 
-          <section className='secondary-container'>
+        <section className='content-container'>
+
+          <section className='members-container'>
             <MemberList 
               members={this.state.members}
               handleMemberClick={this.handleMemberClick.bind(this)}
@@ -116,17 +129,11 @@ class DashboardContainer extends React.Component {
               handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
             />
           </section>
-
-          <section className='secondary-container'>
-            <MemberForm />  
-          </section>
-        </section>
-
-        <section className='training-schedule'>
-          <TrainingScheduleTable />
+          
         </section>
 
       </section>
+
     )
   }
 
