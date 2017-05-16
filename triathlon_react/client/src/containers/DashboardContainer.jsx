@@ -22,47 +22,33 @@ class DashboardContainer extends React.Component {
     }
   }
 
-  fetchAPIData(){
-    
+  fetchData(url){
+    const req = new AjaxRequest()
+    req.get(url, (err, data, status) => {
+      if (err) {throw err}
+      if (status === 200){
+        switch (url) {
+          case 'http://localhost:5000/api/members':
+            this.setState({
+              members: data
+            })
+          case 'http://localhost:5000/api/time_trials':
+            this.setState({
+              timetrials: data
+            })
+          case 'http://localhost:5000/api/results':
+            this.setState({
+              results: data
+            })
+        }
+      }
+    })
   }
 
   componentDidMount(){
-    var member_url = 'http://localhost:5000/api/members'
-    var member_request = new XMLHttpRequest()
-    member_request.open('GET', member_url)
-
-    member_request.onload = () => {
-      if (member_request.status === 200){
-        var data = JSON.parse(member_request.responseText)
-        console.log(data)
-        this.setState({members: data})
-      }
-    }
-    member_request.send()
-
-    var time_trial_url = 'http://localhost:5000/api/time_trials'
-    var time_trial_request = new XMLHttpRequest()
-    time_trial_request.open('GET', time_trial_url)
-
-    time_trial_request.onload = () => {
-      if (time_trial_request.status === 200){
-        var data = JSON.parse(time_trial_request.responseText)
-        this.setState({timetrials: data})
-      }
-    }
-    time_trial_request.send()
-
-    var result_url = 'http://localhost:5000/api/results'
-    var result_request = new XMLHttpRequest()
-    result_request.open('GET', result_url)
-
-    result_request.onload = () => {
-      if (result_request.status === 200){
-        var data = JSON.parse(result_request.responseText)
-        this.setState({results: data})
-      }
-    }
-    result_request.send()
+    this.fetchData('http://localhost:5000/api/members')
+    this.fetchData('http://localhost:5000/api/time_trials')
+    this.fetchData('http://localhost:5000/api/results')
   }
 
   handleTimeTrialClick(timeTrial){
