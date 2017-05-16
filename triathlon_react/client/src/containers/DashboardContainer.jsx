@@ -111,6 +111,13 @@ class DashboardContainer extends React.Component {
             />
           </section>
 
+          <section className='timetrials-container'>
+            <TimeTrialList 
+              timetrials={this.state.timetrials} 
+              handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
+            />
+          </section>
+
           <section className='secondary-container'>
             <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
           </section>
@@ -120,13 +127,6 @@ class DashboardContainer extends React.Component {
               timeTrialDetails={this.state.timeTrialDetails} 
               resultsDetails={this.state.resultsDetails}
               memberDetails={this.state.memberDetails}
-            />
-          </section>
-          
-          <section className='secondary-container'>
-            <TimeTrialList 
-              timetrials={this.state.timetrials} 
-              handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
             />
           </section>
           

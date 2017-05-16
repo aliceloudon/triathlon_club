@@ -16,7 +16,7 @@ class MemberList extends React.Component {
 
     return(
       <section>
-        <h4>Current Members</h4>
+        <h4 className='titles'>Members</h4>
         <ul className='member-list'>
           {memberNodes}        
         </ul>
