@@ -5,15 +5,22 @@ class DetailContainer extends React.Component {
 
   render(){
 
-    const detailNodes = this.props.details.map((detail, index) => {
+    const timeTrialDetailNodes = this.props.timeTrialDetails.map((timeTrial, index) => {
       return (
-        <Detail key={index} title={detail.title} date={detail.date} discipline={detail.discipline} distance={detail.distance}/>
+        <Detail key={index} title={timeTrial.title} date={timeTrial.date} discipline={timeTrial.discipline} distance={timeTrial.distance}/>
+      )
+    })
+
+    const resultsDetailNodes = this.props.resultsDetails.map((result, index) => {
+      return (
+        <Detail key={index} time={result.time} member={result.member_id}/>
       )
     })
 
     return(
       <section className='detail-display'>
-        {detailNodes}
+        {timeTrialDetailNodes}
+        {resultsDetailNodes}
       </section>
     )
   }

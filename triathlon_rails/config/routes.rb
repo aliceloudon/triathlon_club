@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :members, defaults: {format: :json} do
       resources :results
     end
-    resources :results, defaults: {format: :json}
+    # resources :results, defaults: {format: :json}
     resources :time_trials, defaults: {format: :json}
   end
 

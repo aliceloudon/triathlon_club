@@ -12,7 +12,8 @@ class DashboardContainer extends React.Component {
       members: [],
       timetrials: [],
       results: [],
-      details: []
+      timeTrialDetails: [],
+      resultsDetails: []
     }
   }
 
@@ -56,11 +57,21 @@ class DashboardContainer extends React.Component {
 
   handleTimeTrialClick(timeTrial){
     var newDetailsArray = []
+    var newResultsArray = []
     newDetailsArray.push(timeTrial)
-    
+
+    this.state.results.forEach((result) => {
+      if (result.time_trial_id === timeTrial.id){
+        newResultsArray.push(result)
+      }
+    })
+
+
     this.setState((prevState) => ({
-      details: newDetailsArray
+      timeTrialDetails: newDetailsArray,
+      resultsDetails: newResultsArray
     }))
+
   }
 
   render(){
@@ -72,7 +83,7 @@ class DashboardContainer extends React.Component {
         </section>
 
         <section>
-          <DetailContainer details={this.state.details}/>
+          <DetailContainer timeTrialDetails={this.state.timeTrialDetails} resultsDetails={this.state.resultsDetails}/>
         </section>
         
         <section>
