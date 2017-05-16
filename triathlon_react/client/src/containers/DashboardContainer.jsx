@@ -3,6 +3,7 @@ import MemberContainer from '../containers/MemberContainer'
 import MemberForm from '../components/MemberForm'
 import TimeTrialContainer from '../containers/TimeTrialContainer'
 import DetailContainer from './DetailContainer'
+import AthleteHistoryContainer from './AthleteHistoryContainer'
 
 class DashboardContainer extends React.Component {
 
@@ -13,7 +14,8 @@ class DashboardContainer extends React.Component {
       timetrials: [],
       results: [],
       timeTrialDetails: [],
-      resultsDetails: []
+      resultsDetails: [],
+      memberDetails: []
     }
   }
 
@@ -73,7 +75,9 @@ class DashboardContainer extends React.Component {
   }
 
   handleMemberClick(member){
-    console.log('clicked!')
+    this.setState((prevState) => ({
+      memberDetails: member
+    }))
   }
 
   render(){
@@ -88,9 +92,16 @@ class DashboardContainer extends React.Component {
         </section>
 
         <section className='secondary-container'>
+          <AthleteHistoryContainer
+            memberDetails={this.state.memberDetails}
+          />
+        </section>
+
+        <section className='secondary-container'>
           <DetailContainer 
             timeTrialDetails={this.state.timeTrialDetails} 
             resultsDetails={this.state.resultsDetails}
+            memberDetails={this.state.memberDetails}
           />
         </section>
         
