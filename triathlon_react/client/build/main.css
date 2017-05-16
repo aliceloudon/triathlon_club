@@ -11,11 +11,11 @@
   height: 250px;
 }
 
-.member-list {
+/*.member-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
+}*/
 
 .time-trial-list {
   list-style-type: none;
@@ -32,4 +32,9 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+#member-result-list {
+  padding-bottom: 20px;
+  padding-left: 0;
 }

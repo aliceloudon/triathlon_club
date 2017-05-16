@@ -4,9 +4,11 @@ class MemberResult extends React.Component {
 
   render(){
     return(
-      <section>
+      <ul id='member-result-list'>
+        <li>Date: {this.props.result.time_trial.date}</li>
+        <li>{this.props.result.time_trial.title} {this.props.result.time_trial.distance} {this.props.result.time_trial.discipline}</li>
         <li>{this.props.result.time}</li>
-      </section>
+      </ul>
     )
   }
 

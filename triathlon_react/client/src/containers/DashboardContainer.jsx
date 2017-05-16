@@ -28,6 +28,7 @@ class DashboardContainer extends React.Component {
     member_request.onload = () => {
       if (member_request.status === 200){
         var data = JSON.parse(member_request.responseText)
+        console.log(data)
         this.setState({members: data})
       }
     }
