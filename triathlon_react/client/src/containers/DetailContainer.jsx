@@ -29,11 +29,11 @@ class DetailContainer extends React.Component {
     })
 
     return(
-      <section className='detail-display'>
-        <h4>TT details:</h4>
-          <ul>{timeTrialDetailNodes}</ul>
-        <h4>Results:</h4>
-          <ul>{resultsDetailNodes}</ul>
+      <section>
+        <h4 className='detail-headings'>TT details:</h4>
+          <ul className='detail-list'>{timeTrialDetailNodes}</ul>
+        <h4 className='detail-headings'>Results:</h4>
+          <ul className='detail-list'>{resultsDetailNodes}</ul>
       </section>
     )
   }

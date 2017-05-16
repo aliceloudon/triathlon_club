@@ -6,7 +6,11 @@ class MemberContainer extends React.Component {
   render(){
     const memberNodes = this.props.members.map((member, index) => {
       return (
-        <Member key={index} name={member.name}/>
+        <Member 
+          key={index} 
+          member={member}
+          handleMemberClick={this.props.handleMemberClick}
+        />
       )
     })
 

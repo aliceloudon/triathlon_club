@@ -59,9 +59,8 @@ class DashboardContainer extends React.Component {
     var newDetailsArray = []
     var newResultsArray = []
     newDetailsArray.push(timeTrial)
-    // console.log(this.state.results)
+
     this.state.results.forEach((result) => {
-      // console.log(result.time_trial.id)
       if (result.time_trial.id === timeTrial.id){
         newResultsArray.push(result)
       }
@@ -71,32 +70,38 @@ class DashboardContainer extends React.Component {
       timeTrialDetails: newDetailsArray,
       resultsDetails: newResultsArray
     }))
+  }
 
+  handleMemberClick(member){
+    console.log('clicked!')
   }
 
   render(){
     return(
       <section className='main-container'>
 
-        <section>
-          <MemberContainer members={this.state.members}/>  
+        <section className='secondary-container'>
+          <MemberContainer 
+            members={this.state.members}
+            handleMemberClick={this.handleMemberClick.bind(this)}
+          />
         </section>
 
-        <section>
+        <section className='secondary-container'>
           <DetailContainer 
             timeTrialDetails={this.state.timeTrialDetails} 
             resultsDetails={this.state.resultsDetails}
           />
         </section>
         
-        <section>
+        <section className='secondary-container'>
           <TimeTrialContainer 
             timetrials={this.state.timetrials} 
             handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
           />
         </section>
 
-        <section>
+        <section className='secondary-container'>
           <MemberForm />  
         </section>
 
