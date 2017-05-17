@@ -118,33 +118,40 @@ class DashboardContainer extends React.Component {
 
   render(){
     return(
-      <section className='time-trial-page'>
-      <a name="time-trials"></a>
-        <h1 id='time-trial-header'>Time Trials</h1>
-        <section className='time-trial-flexbox'>
-          <section className='secondary-container'>
-            <MemberList 
-              members={this.state.members}
-              handleMemberClick={this.handleMemberClick.bind(this)}
-            />
+      <section>
+        <section className='time-trial-page'>
+        <a name="time-trials"></a>
+          <h1 id='time-trial-header'>Time Trials</h1>
+          <section className='time-trial-flexbox'>
+            <section className='secondary-container'>
+              <MemberList 
+                members={this.state.members}
+                handleMemberClick={this.handleMemberClick.bind(this)}
+              />
+            </section>
+            <section className='secondary-container'>
+              <a name="test"></a>
+              <TimeTrialList 
+                timetrials={this.state.timetrials} 
+                handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
+              />
+            </section>
+            <section className='secondary-container'>
+              <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
+            </section>
+            <section className='secondary-container'>
+              <TimeTrialResultsList 
+                timeTrialDetails={this.state.timeTrialDetails} 
+                resultsDetails={this.state.resultsDetails}
+                memberDetails={this.state.memberDetails}
+              />
+            </section>
           </section>
-          <section className='secondary-container'>
-            <a name="test"></a>
-            <TimeTrialList 
-              timetrials={this.state.timetrials} 
-              handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
-            />
-          </section>
-          <section className='secondary-container'>
-            <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
-          </section>
-          <section className='secondary-container'>
-            <TimeTrialResultsList 
-              timeTrialDetails={this.state.timeTrialDetails} 
-              resultsDetails={this.state.resultsDetails}
-              memberDetails={this.state.memberDetails}
-            />
-          </section>
+        </section>
+
+        <section className='calendar-page'>
+        <a name="calendar"></a>
+          <h1 id='calendar-header'>Calendar</h1>
         </section>
       </section>
     )

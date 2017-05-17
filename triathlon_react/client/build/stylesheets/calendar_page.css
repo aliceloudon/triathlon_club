@@ -2,5 +2,12 @@
 /*  display: flex;
   flex-wrap: wrap;*/
   height: 600px;
-  background-color: #F5F5F5;
+  background-color: #50a793;
+}
+
+#calendar-header {
+  font-size: 2em;
+  margin: 0;
+  padding: 15px;
+  color: white;
 }
