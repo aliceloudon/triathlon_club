@@ -33,9 +33,16 @@ class DashboardContainer extends React.Component {
     })
   }
 
+  changeDatetimeToDate(timeTrialData){
+    timeTrialData.forEach((timeTrial) => {
+      timeTrial.date = timeTrial.date.substring(0, 10)
+    })
+  }
+
   fetchTimeTrialData(url){
     const req = new AjaxRequest()
     req.get(url, (err, data, status) => {
+      this.changeDatetimeToDate(data)
       if (err) {throw err}
       if (status === 200){
         this.setState({timetrials: data})
