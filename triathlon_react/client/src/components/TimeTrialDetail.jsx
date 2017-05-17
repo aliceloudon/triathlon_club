@@ -4,7 +4,7 @@ class TimeTrialDetail extends React.Component {
 
   render(){
     return(
-      <ul className='list'>
+      <ul className='list-half-condensed'>
         <li className='list-element'>{this.props.title} {this.props.distance} {this.props.discipline}</li>
         <li className='list-element'>{this.props.date}</li>
       </ul>
