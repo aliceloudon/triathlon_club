@@ -43,9 +43,23 @@ class DashboardContainer extends React.Component {
     })
   }
 
+  changeTimeToMinutesSeconds(resultsData){
+    resultsData.forEach((result) => {
+      const minutes = Math.floor(result.time/60)
+      const seconds = result.time - minutes * 60
+
+      function str_pad_left(string,pad,length) {
+        return (new Array(length+1).join(pad)+string).slice(-length)
+      }
+      var finalTime = str_pad_left(minutes,'0',2)+':'+str_pad_left(seconds,'0',2)
+      result.time = finalTime
+    })
+  }
+
   fetchResultData(url){
     const req = new AjaxRequest()
     req.get(url, (err, data, status) => {
+      this.changeTimeToMinutesSeconds(data)
       if (err) {throw err}
       if (status === 200){
         this.setState({results: data})
