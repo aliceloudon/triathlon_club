@@ -125,34 +125,42 @@ class DashboardContainer extends React.Component {
           <Sidebar />
         </section>
 
-        <section className='content-container'>
+        <section className='scrollable-content-container'>
 
-          <section className='members-container'>
-            <MemberList 
-              members={this.state.members}
-              handleMemberClick={this.handleMemberClick.bind(this)}
-            />
+          <section className='welcome-page'>
+            image here
           </section>
 
-          <section className='timetrials-container'>
-            <TimeTrialList 
-              timetrials={this.state.timetrials} 
-              handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
-            />
-          </section>
+          <section className='time-trial-page'>
 
-          <section className='secondary-container'>
-            <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
-          </section>
+            <section className='members-container'>
+              <MemberList 
+                members={this.state.members}
+                handleMemberClick={this.handleMemberClick.bind(this)}
+              />
+            </section>
 
-          <section className='secondary-container'>
-            <TimeTrialResultsList 
-              timeTrialDetails={this.state.timeTrialDetails} 
-              resultsDetails={this.state.resultsDetails}
-              memberDetails={this.state.memberDetails}
-            />
-          </section>
+            <section className='timetrials-container'>
+              <TimeTrialList 
+                timetrials={this.state.timetrials} 
+                handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
+              />
+            </section>
+
+            <section className='secondary-container'>
+              <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
+            </section>
+
+            <section className='secondary-container'>
+              <TimeTrialResultsList 
+                timeTrialDetails={this.state.timeTrialDetails} 
+                resultsDetails={this.state.resultsDetails}
+                memberDetails={this.state.memberDetails}
+              />
+            </section>
           
+          </section>
+
         </section>
 
       </section>

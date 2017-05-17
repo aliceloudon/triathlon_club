@@ -8,7 +8,7 @@ class Member extends React.Component {
 
   render(){
     return(
-      <li onClick={this.handleClick.bind(this)}>{this.props.member.name}</li>
+      <li onClick={this.handleClick.bind(this)} className='clickable-list-element'>{this.props.member.name}</li>
     )
   }
 

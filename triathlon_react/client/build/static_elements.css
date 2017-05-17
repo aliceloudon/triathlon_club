@@ -1,0 +1,55 @@
+body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-family: Optima;
+}
+
+header {
+  background-color: #5950A7;
+  height: 50px;
+  width: 100%;
+  top: 0px;
+  position: fixed;
+}
+
+#logo {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  margin-top: 50px;
+/*  display: flex;
+  flex-flow: row wrap;*/
+  width: 100%;
+}
+
+.sidebar {
+  /*flex: 0 1 auto;*/
+  background-color: #232B2D;
+  height: 100%;
+  width: 12%;
+  float: left;
+  position: fixed;
+}
+
+#sidebar-textbox {
+  margin-top: 180px;
+  margin-left: 15%;
+}
+
+.sidebar-text {
+  font-family: Optima;
+  font-size: 0.9em;
+  color: #7a7a7a;
+  line-height: 3em;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-text:hover {
+  color: white;
+  cursor: pointer;
+} 
