@@ -6,16 +6,16 @@ var config = {
   },
   devtool: "source-map",
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['', '.js', '.jsx']
   },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          presets: ['react']
+        query: {
+          presets: ['react', 'es2015']
         }
       }
     ]

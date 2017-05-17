@@ -6,6 +6,7 @@ import TimeTrialResultsList from './TimeTrialResultsList'
 import MemberResultsList from './MemberResultsList'
 import TrainingScheduleTable from './TrainingScheduleTable'
 import AjaxRequest from '../services/AjaxRequest'
+import CalendarContainer from './CalendarContainer'
 
 class DashboardContainer extends React.Component {
 
@@ -152,6 +153,7 @@ class DashboardContainer extends React.Component {
         <section className='calendar-page'>
         <a name="calendar"></a>
           <h1 id='calendar-header'>Calendar</h1>
+          <CalendarContainer/>
         </section>
       </section>
     )
