@@ -3,17 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>Edinburgh Triathletes</title>
-    <link rel='stylesheet' type='text/css' href='main.css'>
-    <link rel='stylesheet' type='text/css' href='static_elements.css'>
-    <link rel='stylesheet' type='text/css' href='time_trial_page.css'>
-    <link rel='stylesheet' type='text/css' href='training_page.css'>
+    <link rel='stylesheet' type='text/css' href='stylesheets/main.css'>
+    <link rel='stylesheet' type='text/css' href='stylesheets/static_elements.css'>
+    <link rel='stylesheet' type='text/css' href='stylesheets/time_trial_page.css'>
+    <link rel='stylesheet' type='text/css' href='stylesheets/training_page.css'>
+    <link rel='stylesheet' type='text/css' href='stylesheets/calendar_page.css'>
     <script src='bundle.js'></script>
   </head>
   <body>
     <header>
-      <h1 id='logo'>ET</h1>
+      <h1 id="logo">ET</h1>
     </header>
-    <section id='app'></section>
-    <section class='training-page'></section>
+
+    <section class='main-container'>    
+
+      <section class='sidebar'>
+        <section id='sidebar-textbox'>
+          <a href='#members'><p class='sidebar-text'>Members</p></a>
+          <a href="#time-trials"><p class='sidebar-text'>Time Trials</p></a>
+          <a href='#club-champs'><p class='sidebar-text'>Club Champs</p></a>
+          <a href='#calendar'><p class='sidebar-text'>Calendar</p></a>
+          <a href='#training'><p class='sidebar-text'>Training</p></a>
+          <a href='#chat'><p class='sidebar-text'>Chat</p></a>
+        </section>
+      </section>
+
+      <section class='scrollable-content-container'>
+        <section class='welcome-page'>image here</section>
+        <section id='app'></section>
+        <a name='calendar'><section class='calendar-page'></section></a>
+        <a name='training'><section class='training-page'></section></a>
+      </section>
+
+    </section>
   </body>
 </html>

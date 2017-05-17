@@ -7,7 +7,6 @@ import MemberResultsList from './MemberResultsList'
 import TrainingScheduleTable from './TrainingScheduleTable'
 import AjaxRequest from '../services/AjaxRequest'
 
-
 class DashboardContainer extends React.Component {
 
   constructor(props){
@@ -119,65 +118,35 @@ class DashboardContainer extends React.Component {
 
   render(){
     return(
-      <section className='main-container'>
-      
-        <section className='sidebar'>
-          <section id='sidebar-textbox'>
-            <p className='sidebar-text'>Members</p>
-            <a href='#test'></a><p className='sidebar-text'>Time Trials</p>
-            <p className='sidebar-text'>Club Champs</p>
-            <p className='sidebar-text'>Calendar</p>
-            <p className='sidebar-text'>Training</p>
-            <p className='sidebar-text'>Chat</p>
+      <section className='time-trial-page'>
+      <a name="time-trials"></a>
+        <h1 id='time-trial-header'>Time Trials</h1>
+        <section className='time-trial-flexbox'>
+          <section className='secondary-container'>
+            <MemberList 
+              members={this.state.members}
+              handleMemberClick={this.handleMemberClick.bind(this)}
+            />
+          </section>
+          <section className='secondary-container'>
+            <a name="test"></a>
+            <TimeTrialList 
+              timetrials={this.state.timetrials} 
+              handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
+            />
+          </section>
+          <section className='secondary-container'>
+            <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
+          </section>
+          <section className='secondary-container'>
+            <TimeTrialResultsList 
+              timeTrialDetails={this.state.timeTrialDetails} 
+              resultsDetails={this.state.resultsDetails}
+              memberDetails={this.state.memberDetails}
+            />
           </section>
         </section>
-
-        <section className='scrollable-content-container'>
-
-          <section className='welcome-page'>
-            image here
-          </section>
-
-            <section className='time-trial-page'>
-
-              <h1 id='time-trial-header'>Time Trials</h1>
-
-              <section className='time-trial-flexbox'>
-
-                <section className='secondary-container'>
-                  <MemberList 
-                    members={this.state.members}
-                    handleMemberClick={this.handleMemberClick.bind(this)}
-                  />
-                </section>
-
-                <section className='secondary-container'>
-                  <a name="test"></a>
-                  <TimeTrialList 
-                    timetrials={this.state.timetrials} 
-                    handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
-                  />
-                </section>
-
-                <section className='secondary-container'>
-                  <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
-                </section>
-
-                <section className='secondary-container'>
-                  <TimeTrialResultsList 
-                    timeTrialDetails={this.state.timeTrialDetails} 
-                    resultsDetails={this.state.resultsDetails}
-                    memberDetails={this.state.memberDetails}
-                  />
-                </section>
-          
-            </section>
-          </section>
-
-        </section>
-
       </section>
-
     )
   }
 
