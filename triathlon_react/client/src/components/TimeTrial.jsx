@@ -12,7 +12,7 @@ class TimeTrial extends React.Component {
 
   render(){
     return(
-      <li className='clickable-list-element' onClick={this.handleClick.bind(this)}>{this.props.timetrial.title}</li>
+      <li className='clickable-list-element' onClick={this.handleClick.bind(this)}>{this.props.timetrial.title} {this.props.timetrial.date}</li>
     )
   }
 

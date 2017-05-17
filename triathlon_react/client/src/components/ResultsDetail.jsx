@@ -4,9 +4,9 @@ class ResultsDetail extends React.Component {
 
   render(){
     return(
-      <section>
-        <li>{this.props.member} {this.props.time}</li>
-      </section>
+      <ul className='list-condensed'>
+        <li className='list-element'>{this.props.member} {this.props.time}</li>
+      </ul>
     )
   }
 

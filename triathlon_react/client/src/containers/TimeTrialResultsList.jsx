@@ -30,11 +30,9 @@ class TimeTrialResultsList extends React.Component {
 
     return(
       <section>
-        <h4>Time Trial Results</h4>
-        <h4 className='detail-headings'>Description:</h4>
-          <ul className='detail-list'>{timeTrialDetailNodes}</ul>
-        <h4 className='detail-headings'>Results:</h4>
-          <ul className='detail-list'>{resultsDetailNodes}</ul>
+        <h4 className='titles'>Time Trial Results</h4>
+          <div>{timeTrialDetailNodes}</div>
+          <div>{resultsDetailNodes}</div>
       </section>
     )
   }

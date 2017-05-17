@@ -15,7 +15,7 @@ header {
 
 #logo {
   color: white;
-  padding: 0;
+  padding: 8px;
   margin: 0;
 }
 
@@ -36,7 +36,7 @@ header {
 }
 
 #sidebar-textbox {
-  margin-top: 180px;
+  margin-top: 20px;
   margin-left: 15%;
 }
 

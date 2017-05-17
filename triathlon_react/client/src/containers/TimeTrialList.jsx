@@ -17,7 +17,7 @@ class TimeTrialList extends React.Component {
     return(
       <section>
         <h4 className='titles'>Time Trials</h4>
-        <ul className='time-trial-list' >
+        <ul className='list' >
           {timeTrialNodes}        
         </ul>
       </section>

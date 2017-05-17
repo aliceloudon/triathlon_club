@@ -6,7 +6,7 @@ import TimeTrialResultsList from './TimeTrialResultsList'
 import MemberResultsList from './MemberResultsList'
 import TrainingScheduleTable from './TrainingScheduleTable'
 import AjaxRequest from '../services/AjaxRequest'
-import Sidebar from './Sidebar'
+
 
 class DashboardContainer extends React.Component {
 
@@ -122,7 +122,14 @@ class DashboardContainer extends React.Component {
       <section className='main-container'>
       
         <section className='sidebar'>
-          <Sidebar />
+          <section id='sidebar-textbox'>
+            <p className='sidebar-text'>Members</p>
+            <a href='#test'></a><p className='sidebar-text'>Time Trials</p>
+            <p className='sidebar-text'>Club Champs</p>
+            <p className='sidebar-text'>Calendar</p>
+            <p className='sidebar-text'>Training</p>
+            <p className='sidebar-text'>Chat</p>
+          </section>
         </section>
 
         <section className='scrollable-content-container'>
@@ -131,34 +138,40 @@ class DashboardContainer extends React.Component {
             image here
           </section>
 
-          <section className='time-trial-page'>
+            <section className='time-trial-page'>
 
-            <section className='members-container'>
-              <MemberList 
-                members={this.state.members}
-                handleMemberClick={this.handleMemberClick.bind(this)}
-              />
-            </section>
+              <h1 id='time-trial-header'>Time Trials</h1>
 
-            <section className='timetrials-container'>
-              <TimeTrialList 
-                timetrials={this.state.timetrials} 
-                handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
-              />
-            </section>
+              <section className='time-trial-flexbox'>
 
-            <section className='secondary-container'>
-              <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
-            </section>
+                <section className='secondary-container'>
+                  <MemberList 
+                    members={this.state.members}
+                    handleMemberClick={this.handleMemberClick.bind(this)}
+                  />
+                </section>
 
-            <section className='secondary-container'>
-              <TimeTrialResultsList 
-                timeTrialDetails={this.state.timeTrialDetails} 
-                resultsDetails={this.state.resultsDetails}
-                memberDetails={this.state.memberDetails}
-              />
-            </section>
+                <section className='secondary-container'>
+                  <a name="test"></a>
+                  <TimeTrialList 
+                    timetrials={this.state.timetrials} 
+                    handleTimeTrialClick={this.handleTimeTrialClick.bind(this)}
+                  />
+                </section>
+
+                <section className='secondary-container'>
+                  <MemberResultsList memberResults={this.state.memberResults} member={this.state.memberDetails}/>
+                </section>
+
+                <section className='secondary-container'>
+                  <TimeTrialResultsList 
+                    timeTrialDetails={this.state.timeTrialDetails} 
+                    resultsDetails={this.state.resultsDetails}
+                    memberDetails={this.state.memberDetails}
+                  />
+                </section>
           
+            </section>
           </section>
 
         </section>

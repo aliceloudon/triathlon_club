@@ -12,11 +12,11 @@ class MemberResultsList extends React.Component {
 
     return(
       <section>
-        <h4>Individual Results</h4>
-        <h4>{this.props.member.name}</h4>
-        <ul className='member-list'>
+        <h4 className='titles'>Individual Results</h4>
+        <h4 className='secondary-titles'>{this.props.member.name}</h4>
+        <div>
           {memberResultNodes}
-        </ul>
+        </div>
       </section>
     )
   }

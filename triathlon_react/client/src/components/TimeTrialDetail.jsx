@@ -4,12 +4,10 @@ class TimeTrialDetail extends React.Component {
 
   render(){
     return(
-      <section>
-        <li>{this.props.title}</li>
-        <li>{this.props.date}</li>
-        <li>{this.props.discipline}</li>
-        <li>{this.props.distance}</li>
-      </section>
+      <ul className='list'>
+        <li className='list-element'>{this.props.title} {this.props.distance} {this.props.discipline}</li>
+        <li className='list-element'>{this.props.date}</li>
+      </ul>
     )
   }
 
