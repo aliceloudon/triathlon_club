@@ -60,6 +60,8 @@ class DashboardContainer extends React.Component {
       }
       var finalTime = str_pad_left(minutes,'0',2)+':'+str_pad_left(seconds,'0',2)
       result.time = finalTime
+
+      result.time_trial.date = result.time_trial.date.substring(0, 10)
     })
   }
 
